@@ -1,0 +1,45 @@
+<!--
+  templateType: none
+  isAvailableForNewContent: false
+-->
+{% macro render_button(btn) %}
+
+{# Set attributes used for the link field #}
+
+{% set href = btn.link_href %}
+{% set target = '' %}
+{% set rel = [] %}
+{% set rel_str = '' %}
+
+{% if btn.link_type is equalto 'EMAIL_ADDRESS' %}
+{% set href = 'mailto:' + href %}
+{% endif %}
+{% if btn.link_follow %}
+{% do rel.append('nofollow') %}
+{% endif %}
+{% if btn.link_tab %}
+{% do rel.append('noopener') %}
+{% set target = ' target="_blank"' %}
+{% endif %}
+{% if rel %}
+{% set rel_join = rel|join(' ') %}
+{% set rel_str = ' rel="{{ rel_join }}"' %}
+{% endif %}
+
+{# Button html #}
+
+<a class="{{ btn.link_class }} {% if btn.show_icon %}has-icon{% endif %}" href="{{ href }}" {{ target ~ rel_str }}>
+  {{ btn.link_text }}
+  {% if btn.show_icon %}
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 30 30" fill="none"
+    class="stroke-current text-white hover:text-btn-bg">
+    <path
+      d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+      stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M12 16L16 12L12 8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M8 12H16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  </svg>
+  {% endif %}
+</a>
+
+{% endmacro %}
