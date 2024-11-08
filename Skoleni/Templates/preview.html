@@ -1,0 +1,36 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: true
+-->
+{% extends "/Skoleni/Templates/Global/base.html" %}
+{% block body %}
+<section class="container">
+    <h1>Preview of Heading 1</h1>
+    <h2>Preview of Heading 2</h2>
+    <h3>Preview of Heading 3</h3>
+    <h4>Preview of Heading 4</h4>
+    <h5>Preview of Heading 5</h5>
+    <h6>Preview of Heading 6</h6>
+    <p>Preview of paragraph</p>
+    <p class="caption">Preview of caption</p>
+    {% import '/Skoleni/Macros/button.html' %}
+    {{ render_button({
+        'link_text': 'Button text',
+        'link_href': '#',
+        'link_class': 'btn btn-large light-hover transition-200',
+        'link_type': 'URL',
+        'link_follow': false,
+        'link_tab': false,
+        'show_icon': true
+    }) }}
+    {{ render_button({
+        'link_text': 'Button text 2',
+        'link_href': '#',
+        'link_class': 'btn btn-medium dark-hover transition-200',
+        'link_type': 'URL',
+        'link_follow': false,
+        'link_tab': false,
+        'show_icon': true
+    }) }}
+</section>
+{% endblock body %}

@@ -1,0 +1,138 @@
+/********************************************/
+/* Styly ze šablony propojene z fields.json */
+/********************************************/
+
+{# Typography #}
+{% set h1_desktop = theme.typography.desktop.h1.size %}
+{% set h2_desktop = theme.typography.desktop.h2.size %}
+{% set h3_desktop = theme.typography.desktop.h3.size %}
+{% set h4_desktop = theme.typography.desktop.h4.size %}
+{% set h5_desktop = theme.typography.desktop.h5.size %}
+{% set h6_desktop = theme.typography.desktop.h6.size %}
+{% set p_desktop = theme.typography.desktop.p.size %}
+{% set p_caption = theme.typography.desktop.c.size %}
+
+{% set h1_mobile = theme.typography.mobile.h1.size %}
+{% set h2_mobile = theme.typography.mobile.h2.size %}
+{% set h3_mobile = theme.typography.mobile.h3.size %}
+{% set h4_mobile = theme.typography.mobile.h4.size %}
+{% set h5_mobile = theme.typography.mobile.h5.size %}
+{% set h6_mobile = theme.typography.mobile.h6.size %}
+{% set p_mobile = theme.typography.mobile.p.size %}
+{% set p_caption_mobile = theme.typography.mobile.c.size %}
+
+{% set h1_fw = theme.typography.desktop.h1.variant %}
+{% set h2_fw = theme.typography.desktop.h2.variant %}
+{% set h3_fw = theme.typography.desktop.h3.variant %}
+{% set h4_fw = theme.typography.desktop.h4.variant %}
+{% set h5_fw = theme.typography.desktop.h5.variant %}
+{% set h6_fw = theme.typography.desktop.h6.variant %}
+{% set p_fw = theme.typography.desktop.p.variant %}
+{% set p_caption_fw = theme.typography.desktop.c.variant %}
+
+{% set h1_lh = theme.typography.desktop.h1.styles['line-height'] %}
+{% set h2_lh = theme.typography.desktop.h2.styles['line-height'] %}
+{% set h3_lh = theme.typography.desktop.h3.styles['line-height'] %}
+{% set h4_lh = theme.typography.desktop.h4.styles['line-height'] %}
+{% set h5_lh = theme.typography.desktop.h5.styles['line-height'] %}
+{% set h6_lh = theme.typography.desktop.h6.styles['line-height'] %}
+{% set p_lh = theme.typography.desktop.p.styles['line-height'] %}
+{% set p_caption_lh = theme.typography.desktop.c.styles['line-height'] %}
+
+{# Blog typography #}
+{% set h1_blog = theme.typography.blog.h1.size%}
+{% set h2_blog = theme.typography.blog.h2.size%}
+{% set h3_blog = theme.typography.blog.h3.size%}
+{% set h4_blog = theme.typography.blog.h4.size%}
+{% set h5_blog = theme.typography.blog.h5.size%}
+{% set h6_blog = theme.typography.blog.h6.size%}
+{% set li_blog = theme.typography.blog.li.size%}
+{% set p_blog = theme.typography.blog.p.size%}
+
+{% set h1_blog_mobile = theme.typography.blog_mobile.h1.size%}
+{% set h2_blog_mobile = theme.typography.blog_mobile.h2.size%}
+{% set h3_blog_mobile = theme.typography.blog_mobile.h3.size%}
+{% set h4_blog_mobile = theme.typography.blog_mobile.h4.size%}
+{% set h5_blog_mobile = theme.typography.blog_mobile.h5.size%}
+{% set h6_blog_mobile = theme.typography.blog_mobile.h6.size%}
+{% set li_blog_mobile = theme.typography.blog_mobile.li.size%}
+{% set p_blog_mobile = theme.typography.blog_mobile.p.size%}
+
+
+{# Colors #}
+{% set primary_color = theme.colors.primary_color.css %}
+{% set secondary_color = theme.colors.secondary_color.css %}
+{% set tertiary_color = theme.colors.tertiary_color.css %}
+{% set bg_light = theme.colors.background_light.css %}
+{% set bg_dark = theme.colors.background_dark.css %}
+
+{# Buttons #}
+{% set primary_button = theme.buttons.primary_button.font.size %}
+{% set primary_button_mobile = theme.buttons.primary_button.font_mobile.size %}
+{% set primary_button_fw = theme.buttons.primary_button.font.variant %}
+{% set secondary_button = theme.buttons.secondary_button.font.size %}
+{% set secondary_button_mobile = theme.buttons.secondary_button.font_mobile.size %}
+{% set secondary_button_fw = theme.buttons.secondary_button.font.variant %}
+
+{# Button colors #}
+{% set btn_text_color = theme.buttons.text_color.css %}
+{% set btn_text_hover_color = theme.buttons.text_hover_color.css %}
+{% set btn_bg = theme.buttons.background_color.css %}
+{% set btn_bg_hover_dark = theme.buttons.background_hover_dark.css %}
+{% set btn_bg_hover_light = theme.buttons.background_hover_light.css %}
+
+{# Lading page DND #}
+{% set total_columns_count = 12 %}
+{% set container_width = theme.spacing.maximum_content_width ~ 'px' %}
+{% set dnd_section_padding = theme.spacing.vertical_spacing ~ 'px ' ~ '0' %}
+
+:root {
+    --h1-desktop: calc({{ h1_desktop }}/16*1rem);
+    --h2-desktop: calc({{ h2_desktop }}/16*1rem);
+    --h3-desktop: calc({{ h3_desktop }}/16*1rem);
+    --h4-desktop: calc({{ h4_desktop }}/16*1rem);
+    --h5-desktop: calc({{ h5_desktop }}/16*1rem);
+    --h6-desktop: calc({{ h6_desktop }}/16*1rem);
+    --p-desktop: calc({{ p_desktop }}/16*1rem);
+    --p-caption: calc({{ p_caption }}/16*1rem);
+    --h1-blog: calc({{ h1_blog }}/16*1rem);
+    --h2-blog: calc({{ h2_blog }}/16*1rem);
+    --h3-blog: calc({{ h3_blog }}/16*1rem);
+    --h4-blog: calc({{ h4_blog }}/16*1rem);
+    --h5-blog: calc({{ h5_blog }}/16*1rem);
+    --h6-blog: calc({{ h6_blog }}/16*1rem);
+    --li-blog: calc({{ li_blog }}/16*1rem);
+    --p-blog: calc({{ p_blog }}/16*1rem);
+    --h1-fw: {{ h1_fw }};
+    --h2-fw: {{ h2_fw }};
+    --h3-fw: {{ h3_fw }};
+    --h4-fw: {{ h4_fw }};
+    --h5-fw: {{ h5_fw }};
+    --h6-fw: {{ h6_fw }};
+    --p-fw: {{ p_fw }};
+    --p-caption-fw: {{ p_caption_fw }};
+    --h1-lh: {{ h1_lh }};
+    --h2-lh: {{ h2_lh }};
+    --h3-lh: {{ h3_lh }};
+    --h4-lh: {{ h4_lh }};
+    --h5-lh: {{ h5_lh }};
+    --h6-lh: {{ h6_lh }};
+    --p-lh: {{ p_lh }};
+    --p-caption-lh: {{ p_caption_lh }};
+    --primary-color: {{ primary_color }};
+    --secondary-color: {{ secondary_color }};
+    --tertiary-color: {{ tertiary_color }};
+    --bg-light: {{ bg_light }};
+    --bg-dark: {{ bg_dark }};
+    --btn-primary: calc({{ primary_button }}/16*1rem);
+    --btn-primary-mobile: calc({{ primary_button_mobile }}/16*1rem);
+    --btn-primary-fw: {{ primary_button_fw }};
+    --btn-secondary: calc({{ secondary_button }}/16*1rem);
+    --btn-secondary-mobile: calc({{ secondary_button_mobile }}/16*1rem);
+    --btn-secondary-fw: {{ secondary_button_fw }};
+    --btn-text-color: {{ btn_text_color }};
+    --btn-text-hover-color: {{ btn_text_hover_color }};
+    --btn-bg: {{ btn_bg }};
+    --btn-bg-hover-dark: {{ btn_bg_hover_dark }};
+    --btn-bg-hover-light: {{ btn_bg_hover_light }};
+}

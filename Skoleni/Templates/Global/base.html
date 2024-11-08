@@ -1,0 +1,38 @@
+<!--
+    templateType: none
+    isAvailableForNewContent: false
+-->
+<!doctype html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="{{ page_meta.meta_description }}">
+    {% if page_meta.html_title || pageTitle %}<title>{{ page_meta.html_title || pageTitle }}</title>{% endif %}
+    {% if site_settings.favicon_src %}<link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />{% endif %}
+    {# Ukazka hubl odkazu #}
+    <link rel="preload" href="{{ get_asset_url('/Skoleni/Assets/fonts/roboto-v32-latin-ext-regular.woff2') }}" as="font" type="font/woff2" crossorigin="anonymous">
+    {# Ukazka global odkazu #}
+    {{ require_css(get_asset_url('/Skoleni/Assets/css/skoleni.css')) }}
+    {{ require_css(get_asset_url('/Skoleni/Assets/css/hs.css')) }}
+    {{ require_css(get_asset_url('/Skoleni/Assets/css/theme.css')) }}
+    {{ require_js(get_asset_url("/Skoleni/Assets/js/splide.min.js"), { position: "head" }) }}
+    {{ standard_header_includes }}
+  </head>
+  <body>
+    {% block header %}
+    {% endblock header %}
+    {% block body %}
+    {% endblock body %}
+    {% block footer %}
+    {% endblock footer %}
+    {# Vysvětlit že clean.js je pouze na stranky kde se 100% nebude používat DND editor #}
+    {% if not is_in_blog_post_editor and not is_in_editor and not is_in_page_editor and not is_in_global_content_editor and not is_in_theme_editor %}
+      {{ require_js(get_asset_url("/Skoleni/Assets/js/clean.js")) }}
+    {% endif %}
+    {# If pro load potřebného JS dle stranky #}
+    {% if load_js %}
+      {{ require_js(get_asset_url(load_js)) }}
+    {% endif %}
+    {{standard_footer_includes}}
+  </body>
+</html>

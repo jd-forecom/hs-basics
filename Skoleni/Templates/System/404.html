@@ -1,0 +1,9 @@
+<!--
+  templateType: error_page
+  isAvailableForNewContent: true
+-->
+{% extends "/Skoleni/Templates/Global/base.html" %}
+{% block body %}
+  {% module "page_template_logo" path="@hubspot/logo" label="Logo" %}
+  {% module "page_template_rich_text" path="@hubspot/rich_text" label="Rich Text" html="<h1>Error 404</h1><a href=\"/\">Go Home</a>" %}
+{% endblock body %}
